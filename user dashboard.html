@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Portal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F0F0F0; /* Soft Gray */
+        }.logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 100px; /* adjust the width as needed */
+            height: auto;
+        }
+
+        .container {
+            display: flex;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            }
+
+            .sidebar {
+            padding-top: 120px; /* adjust the padding as needed */
+            }
+
+        .sidebar {
+            width: 250px;
+            background-color: #FFFFFF; /* White */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #B71234; /* TUT Red */
+        }
+
+        .sidebar p {
+            font-size: 35px;
+            color: #333; /* Charcoal */
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar nav ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            color: #003594; /* TUT Blue */
+            font-weight: bold;
+        }
+
+        .sidebar nav ul li a:hover {
+            color: #4D9DE0; /* Sky Blue */
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #014d7c;
+            font-size: 20px;
+        }
+
+        header input[type="text"] {
+            padding: 10px;
+            border: 1px solid #CCC; /* Light border for input */
+            border-radius: 4px;
+            width: 300px;
+        }
+
+        .internships {
+            background-color: #ffffff; /* Solid white for readability */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .internship-card {
+            border: 1px solid #737373e3; /* Light Silver */
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: box-shadow 0.3s;
+        }
+
+        .internship-card:hover {
+            box-shadow: 0 0 15px rgba(0, 183, 20, 0.5); /* TUT Red */
+        }
+
+        .internship-title {
+            font-size: 18px;
+            color: #B71234; /* TUT Red */
+            margin: 0 0 10px 0;
+        }
+
+        .internship-details {
+            color: #555; /* Medium gray */
+            margin-bottom: 10px;
+        }
+
+        .notify-btn, .download-btn {
+            background-color: #003594; /* TUT Blue */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .notify-btn:hover, .download-btn:hover {
+            background-color: hwb(212 0% 62%); /* Navy Blue */
+        }
+
+        .apply-link {
+            display: inline-block;
+            background-color: #FFD700; /* Bright Yellow */
+            color: #333; /* Charcoal */
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .logo img {
+            filter: invert(100%);
+            width: 250px; 
+            height: auto; 
+            }
+
+        .apply-link:hover {
+            background-color: #B71234; /* TUT Red */
+            color: white; /* Text color change on hover */
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 5; 
+            }
+
+            .sidebar {
+            padding-top: 120px; 
+            position: relative; 
+            z-index: 1; 
+            }
+            .h1{
+                font-size: 40px;
+                color: #014d7c;
+            }
+                    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/Landscape_White on transparent.png" alt="TUT Logo">
+              </div>
+            <h2>Internship Portal</h2>
+            <p id="welcome-message">Welcome, <span id="student-number-placeholder"></span></p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home(Log Out)</a></li>
+                    <li><a href="#">Available Internships</a></li>
+                    <li><a href="#">My Applications</a></li>
+                    <li><a href="https://www.tut.ac.za/media/docs/2025%20Course%20Information.pdf">Resources</a></li>
+                    <li><a href="https://www.tut.ac.za/mytutor-contact-us">FAQs</a></li>
+                    <li><a href="mailto:TUTConnect@outlook.com">Contact Us</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Available Internships</h1>
+                <input type="text" id="search" placeholder="Search internships...">
+            </header>
+            <section class="internships">
+                <h2>Internships</h2>
+                <div class="internship-card">
+                    <h3 class="internship-title">Software Development Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> ABB <br>
+                    <strong>Location:</strong> Remote <br>
+                    <strong>Application Deadline:</strong> 30 Nov 2024</p>
+                    <a class="apply-link" href="https://www.graduates24.com/jobs/viewjob/10731" target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title">Marketing Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> Chieta <br>
+                    <strong>Location:</strong> Midrand,SA <br>
+                    <strong>Application Deadline:</strong> 15 Dec 2024</p>
+                    <a class="apply-link" href="https://www.graduates24.com/jobs/viewjob/10830" target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Human Resourse Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> Spoor & Fisher <br>
+                    <strong>Location:</strong> Pretoria , GP <br>
+                    <strong>Application Deadline:</strong> 07 October 2024</p>
+                    <a class="apply-link" href=" https://www.graduates24.com/jobs/viewjob/10751" target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Human Resourse Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong>The Foschini Group <br>
+                    <strong>Location:</strong> Pretoria , GP <br>
+                    <strong>Application Deadline:</strong>Not Specified </p>
+                    <a class="apply-link" href=" https://www.graduates24.com/jobs/viewjob/9795" target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Human Resourse Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> Shoprite <br>
+                    <strong>Location:</strong> Pretoria , GP <br>
+                    <strong>Application Deadline:</strong>10 October 2024 </p>
+                    <a class="apply-link" href="https://www.graduates24.com/jobs/viewjob/10846 " target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Human Resourse Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> Hastings Direct <br>
+                    <strong>Location:</strong> Pretoria , GP <br>
+                    <strong>Application Deadline:</strong> Not Specified</p>
+                    <a class="apply-link" href="https://www.graduates24.com/jobs/viewjob/10837 " target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Human Resourse Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> Gold One Group <br>
+                    <strong>Location:</strong> Pretoria , GP <br>
+                    <strong>Application Deadline:</strong>25 October 2024</p>
+                    <a class="apply-link" href=" https://www.graduates24.com/jobs/viewjob/10843" target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Human Resourse Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> Dis-Chem <br>
+                    <strong>Location:</strong> Pretoria , GP <br>
+                    <strong>Application Deadline:</strong>08 October 2024</p>
+                    <a class="apply-link" href=" https://www.graduates24.com/jobs/viewjob/8799" target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Human Resourse Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong>RCL Food  <br>
+                    <strong>Location:</strong> Pretoria , GP <br>
+                    <strong>Application Deadline:</strong>17 October 2024 </p>
+                    <a class="apply-link" href="https://www.graduates24.com/jobs/viewjob/10855" target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Human Resourse Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> Pick n Pay <br>
+                    <strong>Location:</strong> CapeTown, SA <br>
+                    <strong>Application Deadline:</strong> 31 october 2024</p>
+                    <a class="apply-link" href="https://www.graduates24.com/jobs/viewjob/10844 " target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Accounting Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> First National Bank (FNB) <br>
+                    <strong>Location:</strong> Jorburg, SA <br>
+                    <strong>Application Deadline:</strong> 15 October 2024</p>
+                    <a class="apply-link" href="https://www.graduates24.com/jobs/viewjob/10884 " target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Accounting Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong>iMasFinance  <br>
+                    <strong>Location:</strong> Centurion, SA <br>
+                    <strong>Application Deadline:</strong> 01 November 2025</p>
+                    <a class="apply-link" href="https://www.graduates24.com/jobs/viewjob/10904 " target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Administration Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> Life healthCare  <br>
+                    <strong>Location:</strong> Pretoria, SA <br>
+                    <strong>Application Deadline:</strong>13 october 2024</p>
+                    <a class="apply-link" href=" https://www.graduates24.com/jobs/viewjob/10851" target="_blank">Apply</a>
+                </div>
+                
+                <div class="internship-card">
+                    <h3 class="internship-title"> Administration Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> NBCRFLI <br>
+                    <strong>Location:</strong>  SA <br>
+                    <strong>Application Deadline:</strong>16 october 2024 </p>
+                    <a class="apply-link" href="https://www.graduates24.com/jobs/viewjob/10877 " target="_blank">Apply</a>
+                </div>
+                
+                <div class="internship-card">
+                    <h3 class="internship-title"> Administration Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> MiWay <br>
+                    <strong>Location:</strong> Midrand, SA <br>
+                    <strong>Application Deadline:</strong> 31 october 2024</p>
+                    <a class="apply-link" href=" https://www.graduates24.com/jobs/viewjob/10876" target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Administration Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> BDO <br>
+                    <strong>Location:</strong> Jorburg, SA <br>
+                    <strong>Application Deadline:</strong> Not Specified</p>
+                    <a class="apply-link" href=" https://www.graduates24.com/jobs/viewjob/10888" target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title">SoftwareDeveloper Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> Parvana Recruitment<br>
+                    <strong>Location:</strong> Jorburg, SA <br>
+                    <strong>Application Deadline:</strong> 16 October 2025</p>
+                    <a class="apply-link" href="https://www.linkedin.com/jobs/view/3809557783" target="_blank">Apply</a>
+                </div>
+                <div class="internship-card">
+                    <h3 class="internship-title"> Software Developer Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> ABSA <br>
+                    <strong>Location:</strong> Laphalela Limpopo , SA <br>
+                    <strong>Application Deadline:</strong> 20 October 2024</p>
+                    <a class="apply-link" href="https://www.linkedin.com/jobs/view/4020843882" target="_blank">Apply</a>
+                </div>
+                
+                <div class="internship-card">
+                    <h3 class="internship-title"> Software Developer Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong>Braintrust <br>
+                    <strong>Location:</strong> Pretoria North, SA <br>
+                    <strong>Application Deadline:</strong> 25 Ocrober 2024</p>
+                    <a class="apply-link" href="https://www.linkedin.com/jobs/view/3981624899" target="_blank">Apply</a>
+                </div>
+                
+                <div class="internship-card">
+                    <h3 class="internship-title"> IT Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> unique Personel<br>
+                    <strong>Location:</strong> Jorburg, SA <br>
+                    <strong>Application Deadline:</strong> 30 November 2024</p>
+                    <a class="apply-link" href="https://www.linkedin.com/jobs/view/3971450782" target="_blank">Apply</a>
+                </div>
+                
+                <div class="internship-card">
+                    <h3 class="internship-title"> IT  Intern</h3>
+                    <p class="internship-details"><strong>Company:</strong> Procter & Gamble<br>
+                    <strong>Location:</strong>Remote , SA <br>
+                    <strong>Application Deadline:</strong>28 November 2024 </p>
+                    <a class="apply-link" href="https://www.linkedin.com/jobs/view/4036340339" target="_blank">Apply</a>
+                </div>
+                
+                
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Get the student number from local storage
+        const studentNumber = localStorage.getItem('studentNumber');
+        if (studentNumber) {
+            document.getElementById('student-number-placeholder').textContent = studentNumber;
+        } else {
+            document.getElementById('welcome-message').textContent = 'Welcome, Guest';
+        }
+        
+        // Get the search input field and the internship listings
+const searchInput = document.getElementById('search');
+const internshipListings = document.querySelectorAll('.internship-card');
+
+// Add an event listener to the search input field
+searchInput.addEventListener('input', () => {
+  // Get the search query
+  const searchQuery = searchInput.value.toLowerCase();
+
+  // Loop through the internship listings
+  internshipListings.forEach((listing) => {
+    // Get the internship title and details
+    const title = listing.querySelector('.internship-title').textContent.toLowerCase();
+    const details = listing.querySelector('.internship-details').textContent.toLowerCase();
+
+    // Check if the search query matches the internship title or details
+    if (title.includes(searchQuery) || details.includes(searchQuery)) {
+      // Show the internship listing if it matches the search query
+      listing.style.display = 'block';
+    } else {
+      // Hide the internship listing if it doesn't match the search query
+      listing.style.display = 'none';
+    }
+  });
+});
+    </script>
+</body>
+</html>
